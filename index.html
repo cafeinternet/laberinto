@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=" https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- libreria de ambientes -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  
+    <!-- LIBRERIAS DE COLISIONES Y FÍSICAS
+    <script
+      src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>-->
+  
+    <!-- MOVIMIENTO DE LA CAMARA -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/super-hands@2.0.2/dist/super-hands.min.js"></script>
+  </head>
+  
+  <body>
+  
+    <!-- colocar  -- "debug: true" en physics para visualizar el tamaño de la solidez del objeto -->
+    <a-scene physics="gravity:0.1; debug: true">
+  
+      <a-entity movement-controls kinematic-body>
+
+     
+        <a-entity id="camera" camera position="0 3 0" look-controls></a-entity>
+      </a-entity>
+  
+  
+      <a-assets>
+      <img id="maze" src="assets/maze.jpg" alt="" >
+      </a-assets>
+
+     
+      <!-- PAREDES -->
+      <a-box src="#maze" scale="100 .1 100" rotation="0 90 0"   position="31.803 0.01 -30.96604" ></a-box> ></a-box>
+
+      <a-box static-body=""  position="-2.32463 2.4 -29.42547" scale="74.21828 4.639 0.935" rotation="0 90 0"  color= "red"></a-box>    
+      <a-box static-body=""  position="66.524 2.4 -29.42547" scale="74.21828 4.639 0.935" rotation="0 90 0"  color= "red"></a-box>    
+
+      <a-box static-body="" position="32.696 2.4 -66.31039" scale="69.592 4.639 0.935"  color="red"></a-box>
+      <a-box static-body="" position="32.696 2.4 7.4922" scale="69.592 4.639 0.935" color="red"  rotation="0 -0.01 0"></a-box>
+      <!-- ILUMINACIÓN -->
+      <a-entity light="type: point;" position="0.949 4.494 -7.408"></a-entity>
+      <a-entity light="intensity: 0.6; type: ambient" position="0 9.339 -14.594"></a-entity>
+  
+      <!-- AMBIENTE 
+      <a-entity environment="preset: default; groundColor: #445; grid: cross"></a-entity>-->
+  
+    </a-scene>
+</body>
+</html>
